@@ -10,6 +10,7 @@ const Tenor = require("tenorjs").client({
 
 // App Setup
 const app = express();
+app.use(express.static('public'));
 
 // Middleware
 const exphbs  = require('express-handlebars');
@@ -26,7 +27,7 @@ app.get('/', (req, res) => {
   }
 
   // Tenor.search.Query("SEARCH KEYWORD HERE", "LIMIT HERE")
-  Tenor.Search.Query(term, "10")
+  Tenor.Search.Query(term, "9")
     .then(response => {
       // store the gifs we get back from the search
       const gifs = response;

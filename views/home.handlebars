@@ -1,9 +1,11 @@
 <h1>Search for GIFS</h1>
-<form action="/">
+<form id="trending-form" action="/">
   <input type="text" name="term">
   <button type="submit">Search</button>
+  <button class="trending" type="button" onclick="trendingSubmit()">Trending</button>
 </form>
 
+<section class="gif-grid">
 {{#each gifs}}
     <div class="tenor-gif-embed" data-postid="{{this.id}}" data-share-method="host" data-width="250px"
       data-aspect-ratio="1.2266666666666666">
@@ -11,3 +13,4 @@
       <a href="{{this.url}}"></a></div>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 {{/each}}
+</section>
